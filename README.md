@@ -19,9 +19,12 @@
 
 **School:** Frans Schartaus Handelsinstitut
 
-</div>
-<div align="center">
-  <h3>📄 <a href="docs/Vulnerability_Report_Daniel_H.pdf">View Vulnerability Report (PDF)</a> &nbsp; | &nbsp; 📊 <a href="docs/Vulnerability_6_Presentation_Daniel_H.pdf">View Presentation Slides (PDF)</a></h3>
+  <h3>
+    📄 <a href="https://github.com/DanielHallbro/OWASP_Juice_Shop_Analysis/raw/main/docs/Vulnerability_Report_Daniel_H.pdf">Download Vulnerability Report (PDF)</a> 
+    &nbsp; | &nbsp; 
+    📊 <a href="https://github.com/DanielHallbro/OWASP_Juice_Shop_Analysis/raw/main/docs/Vulnerability_6_Presentation_Daniel_H.pdf">Download Presentation Slides (PDF)</a>
+  </h3>
+  <p><i>(Direct download links to bypass GitHub preview limitations)</i></p>
 </div>
 
 <br>
