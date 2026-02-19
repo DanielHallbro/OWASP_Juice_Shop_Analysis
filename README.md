@@ -58,6 +58,47 @@ The environment is structured as a two-node network:
 * **Attacker (`daniel-tools`):** A custom Kali Linux instance equipped with security tools and listener port `9999`.
 * **Network (`juice-net`):** An isolated Docker bridge network that prevents traffic from leaking to the host OS.
 
+<details>
+    <summary>View Docker-Compose Configuration (Dropdown)</summary>
+
+```bash
+services:
+  # OWASP Juice Shop
+  juice-shop:
+    container_name: FSjuice1
+    image: bkimminich/juice-shop
+    environment:
+      - NODE_ENV=unsafe
+    ports:
+      - "3000:3000"
+    networks:
+      - juice-net
+
+  # Custom Kali Toolset
+  tools:
+    container_name: daniel-tools
+    build: .
+    image: daniels-juice-shop-tools
+    # Mapping port 9999 to allow the host to send data to listeners inside the container
+    ports:
+      - "9999:9999"
+    # Keep container running to allow interactive shell access
+    stdin_open: true
+    tty: true
+    networks:
+      - juice-net
+    depends_on:
+      - juice-shop
+
+networks:
+  # Isolated bridge network for safe testing
+  juice-net:
+    driver: bridge
+```
+</details>
+
+<br>
+
 **Key Features:**
 * **Isolation:** Containers communicate via internal DNS, preventing accidental exposure.
 * **Persistency:** Interactive shell access allows for persistent storage of scan results.
